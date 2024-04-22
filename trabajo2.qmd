@@ -24,12 +24,14 @@ Considerando lo anteriormente expuesto es que en el presente trabajo se pretende
 
 A continuación se presentará un breve análisis descriptivo. Como se mencionó en la introducción los datos utilizados fueron los generados por la encuesta LAPOP que se aplicó el año 2023 en Chile. Se escogieron siete variables para el presente análisis: Confianza en los medios de comunicación, las otras seis se pueden dividir en dos grupos, por un lado: nivel de acuerdo con que el estado ofrezca servicios sociales (asistencia de salud, educación, vivienda, etc.) a venezolanos, españoles e inmigrantes y por otro lado: nivel de molestia de tener un vecino venezolano, español o inmigrante.
 
-Ahora se cargará los paquetes a utilizar y la base de datos (la cual ya tiene las variables operacionalizadas)
+Ahora se cargará los paquetes a utilizar y la base de datos con las variables ya operacionalizadas.
 
 ```{r}
 pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2)
 load("ipo/input/data-proc/variables_operacionalizadas.RData")
 ```
+
+En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable de confianza en los medios de comunicación (sus categoría de respuesta iba de 1 a 7, siendo 1 nada de confianza y 7 mucha confianza) se puede observar que en promedio existe una desconfianza de los chilenos hacia estos, cabe señalar que solo un 4.3% de la muestra señaló confiar mucho en los medios de comunicación. En cuanto al grupo de variables del nivel de acuerdo con que el gobierno ofrezca servicios sociales (sus categorías de respuesta van de 1 a 5, siendo 1 muy en desacuerdo y 5 muy de acuerdo) a los extranjeros que vienen a residir al país existen promedios parecidos para los tres casos: Venezolanos (presenta un promedio de 3) españoles (3.3) e inmigrantes (2.9) considerando las categorías de respuesta se puede decir existe indiferencia (ni de acuerdo ni en acuerdo) por parte de los ciudadanos con respecto a este tópico, sin embargo es relevante señalar que la moda en las tres variables es la categoría de respuesta 4 (algo de acuerdo) en cuanto a los venezolanos
 
 ```{r}
 summarytools::dfSummary(proc_data, plain.ascii = FALSE)
