@@ -1,0 +1,5 @@
+"0","ggplot(data = proc_data, aes(conf_mcm)) +"
+"0","  geom_bar(fill=""blue"")+"
+"0","  labs(title = ""Confianza en los medios masivos de comunicación"", "
+"0","       x = ""Confianza en los medios masivos de comunicación"","
+"0","       y = ""Frecuencia"")"

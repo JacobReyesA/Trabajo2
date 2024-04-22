@@ -1,8 +1,0 @@
-[1,"==> quarto preview trabajo2.qmd --to html --no-watch-inputs --no-browse\n\n"]
-[1,"\r\n\r\nprocessing file: trabajo2.qmd\r\n\r  |                                                          \r  |                                                    |   0%\r  |                                                          \r  |..........                                          |  20%                  \r  |                                                          \r  |.....................                               |  40% [unnamed-chunk-1]"]
-[1,"\r  |                                                          \r  |...............................                     |  60%                  \r  |                                                          \r  |..........................................          |  80% [unnamed-chunk-2]"]
-[1,"\r  |                                                          \r  |....................................................| 100%                  \r                                                                                                            \r\noutput file: trabajo2.knit.md\r\n\r\n"]
-[1,"pandoc \n"]
-[1,"  to: html\n  output-file: trabajo2.html\n  standalone: true\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  \nmetadata\n"]
-[1,"  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  title: Medios Masivos de Comunicación y su Influencia en la Percepción de los Chilenos sobre la Ingmiración\n  editor: visual\n  bibliography:\n    - percepcion-de-inmigracion.bib\n  \n"]
-[1,"Output created: trabajo2.html\n\nWatching files for changes\nBrowse at http://localhost:6365/\n"]

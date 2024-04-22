@@ -31,9 +31,37 @@ pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, sum
 load("ipo/input/data-proc/variables_operacionalizadas.RData")
 ```
 
-En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable de confianza en los medios de comunicación (sus categoría de respuesta iba de 1 a 7, siendo 1 nada de confianza y 7 mucha confianza) se puede observar que en promedio existe una desconfianza de los chilenos hacia estos, cabe señalar que solo un 4.3% de la muestra señaló confiar mucho en los medios de comunicación. En cuanto al grupo de variables del nivel de acuerdo con que el gobierno ofrezca servicios sociales (sus categorías de respuesta van de 1 a 5, siendo 1 muy en desacuerdo y 5 muy de acuerdo) a los extranjeros que vienen a residir al país existen promedios parecidos para los tres casos: Venezolanos (presenta un promedio de 3) españoles (3.3) e inmigrantes (2.9) considerando las categorías de respuesta se puede decir existe indiferencia (ni de acuerdo ni en acuerdo) por parte de los ciudadanos con respecto a este tópico, sin embargo es relevante señalar que la moda en las tres variables es la categoría de respuesta 4 (algo de acuerdo) en cuanto a los venezolanos
+En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable de confianza en los medios de comunicación (sus categoría de respuesta iba de 1 a 7, siendo 1 nada de confianza y 7 mucha confianza) se puede observar que en promedio existe una desconfianza de los chilenos hacia estos, cabe señalar que solo un 4.3% de la muestra señaló confiar mucho en los medios de comunicación. En cuanto al grupo de variables del nivel de acuerdo con que el gobierno ofrezca servicios sociales (sus categorías de respuesta van de 1 a 5, siendo 1 muy en desacuerdo y 5 muy de acuerdo) a los extranjeros que vienen a residir al país existen promedios parecidos para los tres casos: Venezolanos (presenta un promedio de 3) españoles (2.9) e inmigrantes (3.3) considerando las categorías de respuesta se puede decir existe indiferencia (ni de acuerdo ni en acuerdo) por parte de los ciudadanos con respecto a este tópico, sin embargo es relevante señalar que la moda en las tres variables es la categoría de respuesta 4 (algo de acuerdo) y la segunda categoría de respuesta con más frecuencia es la 1 (muy en desacuerdo). En cuanto al grupo de variable de respuesta del nivel de molestia (sus categorías de respuesta iban de 0 a 4, siendo 0 ninguna molestia y 3 mucha molestia), en la tabla se puede apreciar que en los tres casos en promedio para los chilenos no sería molesto tener un vecino venezolano (0.8), español (0.8) o inmigrante (0.5). También se puede observar que para estas últimas seis variables existe un gran numero de casos perdidos, esto es porque estas preguntas se le aplicaron solo a un tercio de la muestra. En síntesis, observando esta tabla se puede decir que los chilenos presentan una baja confianza con sus medios masivos de comunicación, y presentan una "buena" (las comillas son porque no creo que se pueda definir esto solo con estas variables) percepción sobre la población extranjera del país independiente de su país de origen.
 
 ```{r}
 summarytools::dfSummary(proc_data, plain.ascii = FALSE)
 view(dfSummary(proc_data, headings=FALSE))
+```
+
+siguiendo la visualización de datos ahora se presentarán en gráficos univariados dos variables principales de la investigación.
+
+En la @fig-gdp se puede observar la variable "Confianza en los medios de comunicación" graficada. En este gráfico se puede apreciar que la barra más alta es la primera (o sea la del valor de categoría de respuesta 1) es decir que los chilenos en su mayoría no confían en los medios masivos de comunicaciónd el país.
+
+```{r}
+#| label: fig-gdp
+#| fig-cap: "Confianza en los medios de comunicación"
+ggplot(data = proc_data, aes(conf_mcm)) +
+  geom_bar(fill="blue")+
+  labs(title = "Confianza en los medios masivos de comunicación", 
+       x = "Confianza en los medios masivos de comunicación",
+       y = "Frecuencia")
+```
+
+A continuación se presenta la @fig-gdp2, esta corresponde a la variable "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a inmigrantes". En este gráfico, considerando las categorías de respuesta de esta variable (1 Muy en desacuerdo a 5 Muy de acuerdo) se puede observar que la categoría con más frecuencia es la número 4 (Algo de acuerdo). Seguido por la categoría muy de acuerdo y la tercera categoría con más observaciones es la número 1 (Muy en desacuerdo). En síntesis, con este gráfico se puede apreciar que existe mayor acuerdo a que el gobierno ofrezca servicios sociales a los inmigrantes habitantes del país.
+
+```{r}
+#| label: fig-gdp2
+#| fig-cap: "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a Inmigrantes"
+
+ggplot(data = proc_data, aes(s_sociales_inmg)) +
+  geom_bar(fill="blue")+
+  labs(title = "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a INMIGRANTES", 
+       x = "Nivel de acuerdo",
+       y = "Frecuencia")
+
 ```

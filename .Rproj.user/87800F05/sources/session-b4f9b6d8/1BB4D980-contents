@@ -94,7 +94,5 @@ get_label(proc_data$vecino_inmg)
 proc_data$vecino_esp <- set_label(x = proc_data$vecino_ven, label = "Nivel de molestia: Tener un vecino español")
 get_label(proc_data$vecino_esp)
 
-frq(proc_data$s_sociales_esp)
-get_labels(proc_data)
-frq(proc_data$conf_mcm)
+#Guardando la base de datos con las variables procesadas. 
 save(proc_data, file="ipo/input/data-proc/variables_operacionalizadas.RData")

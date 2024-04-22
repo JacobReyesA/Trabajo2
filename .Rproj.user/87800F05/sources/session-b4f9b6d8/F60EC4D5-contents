@@ -95,14 +95,3 @@ get_label(proc_data$vecino_inmg)
 proc_data$vecino_esp <- set_label(x = proc_data$vecino_ven, label = "Nivel de molestia: Tener un vecino español")
 get_label(proc_data$vecino_esp)
 
-frq(proc_data$s_sociales_esp)
-get_labels(proc_data)
-frq(proc_data$conf_mcm)
-save(proc_data, file="ipo/input/data-proc/variables_operacionalizadas.RData")
-load("ipo/input/data-proc/variables_operacionalizadas.RData")
-stargazer(proc_data,type = "text")
-sjmisc::descr(proc_data,
-              show = c("label","range", "mean", "sd", "NA.prc", "n"))%>%
-  kable(.,"markdown")
-proc_data %>% ggplot(aes(x = conf_mcm)) + 
-  geom_bar(fill = "coral")
