@@ -1,0 +1,1 @@
+{"frames":[{"func":"sjmisc::descr(proc_data, show = c(\"label\", \"range\", \"mean\", \"sd\", \n    \"NA.prc\", \"n\")) %>% kable(., \"markdown\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in kable(., \"markdown\") : no se pudo encontrar la función \"kable\"\n"}

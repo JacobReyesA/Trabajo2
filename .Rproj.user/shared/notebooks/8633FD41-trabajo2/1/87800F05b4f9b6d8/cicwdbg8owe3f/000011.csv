@@ -1,0 +1,2 @@
+"0","pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2)"
+"0","load(""ipo/input/data-proc/variables_operacionalizadas.RData"")"

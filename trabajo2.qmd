@@ -1,0 +1,37 @@
+---
+title: "Medios Masivos de Comunicación y su Influencia en la Percepción de los Chilenos sobre la Ingmiración"
+format: html
+editor: visual
+bibliography: percepcion-de-inmigracion.bib
+link-citations: TRUE
+---
+
+*Por: Jacob Reyes A.*
+
+## Introducción
+
+En Chile el fenómeno de inmigración no es algo nuevo, ocurre desde hace más de un siglo, sin embargo nunca con un flujo tan intenso como el de los últimos años. Las estadísticas del Instituto Nacional de Estadísticas (INE) en conjunto con el Servicio Nacional de Migraciones (SERMIG) estimaron que para el año 2022 había un total de 1,625,074 personas extranjeras residiendo en Chile [@ine2022]. Según estas estadísticas migratorias los colectivos principales de la población extranjera son de Venezuela (32.8%), Perú (15.4%) y Colombia (11.7%) seguidos por Haití (11.4%), Bolivia (9.1%) y Argentina (4.9%).
+
+El 2019 la Alianza Comunicación y Pobreza realizó el seminario Migración y Opinión Pública. En él el académico Roberto Méndez presentó datos relacionados a la opinión pública sobre la migración los cuales demuestran que Chile es el país con la percepción más severa sobre los migrantes, en síntesis los chilenos consideran esta ola de inmigración como una amenaza a la identidad nacional, al empleo, seguridad y al acceso de los servicios entregados por el Estado [ver @fundaciónsuperacióndelapobreza2019; también @escueladegobierno2019].
+
+¿Cómo tratan este tema los medios de comunicación en el país? Primero, es relevante señalar que los medios tienen efectos significativos en la sociedad, si bien el nivel de influencia que tienen sobre la ciudadanía puede variar con el tiempo, investigaciones han demostrado que es en los tiempos de crisis donde éstos demuestran ser mucho más influyentes [@rubioOpinionPublicaMedios2009]. En el país los medios de comunicación (diarios, televisión, radio, etc.) abordan la migración desde distintos puntos de vista, no obstante, en su mayoría lo hacen considerando al migrante como un "otro", un forastero que viene a invadir, transformar la sociedad a la que llegan, creando así una mala representación de los migrantes. [@rizik2019].
+
+Además de esta negativa representación que hacen los medios de comunicación sobre los migrantes, existe evidencia de que los periodos con mayor actividad de menciones discriminatorias en redes sociales se relacionan con eventos noticiosos sobre la población extranjera [@galvezBAROMETROPERCEPCIONMIGRACION2020].
+
+Considerando lo anteriormente expuesto es que en el presente trabajo se pretende investigar como la percepción de los chilenos sobre la inmigración es influenciada por la confianza que estos tienen en los medios de comunicación, con la hipótesis: **A mayor confianza en los medios de comunicación, la percepción negativa de los chilenos sobre los inmigrantes aumenta**. Para llevar a cabo este estudio se utilizarán los datos de la encuesta LAPOP aplicada el año 2023 en el territorio nacional.
+
+## Análisis descriptivo 
+
+A continuación se presentará un breve análisis descriptivo. Como se mencionó en la introducción los datos utilizados fueron los generados por la encuesta LAPOP que se aplicó el año 2023 en Chile. Se escogieron siete variables para el presente análisis: Confianza en los medios de comunicación, las otras seis se pueden dividir en dos grupos, por un lado: nivel de acuerdo con que el estado ofrezca servicios sociales (asistencia de salud, educación, vivienda, etc.) a venezolanos, españoles e inmigrantes y por otro lado: nivel de molestia de tener un vecino venezolano, español o inmigrante.
+
+Ahora se cargará los paquetes a utilizar y la base de datos (la cual ya tiene las variables operacionalizadas)
+
+```{r}
+pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2)
+load("ipo/input/data-proc/variables_operacionalizadas.RData")
+```
+
+```{r}
+summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+view(dfSummary(proc_data, headings=FALSE))
+```
